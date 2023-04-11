@@ -16,7 +16,7 @@ export function LoginButton() {
             <Navbar.Collapse id="basic-navbar-nav justify-content-end">
               <Nav className="me-auto">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/company/companies">Companies</Nav.Link>
+                <Nav.Link href="/company">Companies</Nav.Link>
                 <NavDropdown
                   title={session.user.email}
                   id="basic-nav-dropdown justify-content-end"
@@ -45,8 +45,8 @@ export function LoginButton() {
           <Navbar.Collapse id="basic-navbar-nav justify-content-end">
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/company/companies">Services</Nav.Link>
-              <Nav.Link href="/">Projects</Nav.Link>
+              <Nav.Link href="/services">Services</Nav.Link>
+              <Nav.Link href="/projects">Projects</Nav.Link>
               <Nav.Link onClick={() => signIn()}>Log in</Nav.Link>
             </Nav>
           </Navbar.Collapse>

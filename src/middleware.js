@@ -1,7 +1,7 @@
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
-const requireAuth = ["/company/companies"];
+const requireAuth = ["/company", "/settings", "/account", "/help"];
 export async function middleware(request) {
   const res = NextResponse.next();
   const pathname = request.nextUrl.pathname;
