@@ -14,6 +14,12 @@ export const authOptions = {
         },
         password: { label: "Contraseña", type: "password" },
       },
+      theme: {
+        colorScheme: "dark", // "auto" | "dark" | "light"
+        brandColor: "#27237b ", // Hex color code
+        logo: "https://www.macrodatum.com/assets/img/LogoOriginal500x150.png", // Absolute URL to image
+        buttonText: "#231f20", // Hex color code
+      },
       async authorize(credentials, req) {
         if (credentials == null) return null;
         try {

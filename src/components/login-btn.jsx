@@ -1,18 +1,57 @@
 import { useSession, signIn, signOut } from "next-auth/react";
+import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap";
 export function LoginButton() {
   const { data: session } = useSession();
+  //si es anonimo
+  //si esta autenticado
+  //rol administrador
+  //rol usuario => otros roles
   if (session) {
     return (
       <>
-        Signed in as {session.user.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
+        <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav justify-content-end">
+              <Nav className="me-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/company/companies">Companies</Nav.Link>
+                <NavDropdown
+                  title={session.user.email}
+                  id="basic-nav-dropdown justify-content-end"
+                >
+                  <NavDropdown.Item href="account">Account</NavDropdown.Item>
+                  <NavDropdown.Item href="help">Help</NavDropdown.Item>
+                  <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={() => signOut()}>
+                    Sign out
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
       </>
     );
   }
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav justify-content-end">
+            <Nav className="me-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/company/companies">Services</Nav.Link>
+              <Nav.Link href="/">Projects</Nav.Link>
+              <Nav.Link onClick={() => signIn()}>Log in</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </>
   );
 }
