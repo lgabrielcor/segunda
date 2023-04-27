@@ -18,9 +18,6 @@ export default function Home() {
     <>
       <LoginButton />
       <Tarjetas></Tarjetas>
-      <div>
-        data
-      </div>
       <MapWithNoSSR />
     </>
   );
