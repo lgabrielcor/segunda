@@ -9,24 +9,27 @@ export function LoginButton() {
   if (session) {
     return (
       <>
-        <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="md" bg="light" variant="light">
           <Container>
-            <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand href="/">Alianza Terrestre</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav justify-content-end">
               <Nav className="me-auto">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/company">Companies</Nav.Link>
+                <Nav.Link href="/">Inicio</Nav.Link>
+                <Nav.Link href="/company">Empresa</Nav.Link>
+                <Nav.Link href="/tracking">Seguimiento</Nav.Link>
+                <Nav.Link href="/flota">Flota</Nav.Link>
+                <Nav.Link href="/financiero">Mod. Financiero</Nav.Link>
                 <NavDropdown
                   title={session.user.email}
                   id="basic-nav-dropdown justify-content-end"
                 >
-                  <NavDropdown.Item href="account">Account</NavDropdown.Item>
-                  <NavDropdown.Item href="help">Help</NavDropdown.Item>
-                  <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+                  <NavDropdown.Item href="account">Cuenta</NavDropdown.Item>
+                  <NavDropdown.Item href="help">Ayuda</NavDropdown.Item>
+                  <NavDropdown.Item href="/settings">Configuración</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={() => signOut()}>
-                    Sign out
+                    Salir
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
@@ -38,15 +41,15 @@ export function LoginButton() {
   }
   return (
     <>
-      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="md" bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="/">Alianza Terrestre</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav justify-content-end">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/services">Services</Nav.Link>
-              <Nav.Link href="/projects">Projects</Nav.Link>
+              <Nav.Link href="/">Inicio</Nav.Link>
+              <Nav.Link href="/services">Servicios</Nav.Link>
+              <Nav.Link href="/projects">Proyectos</Nav.Link>
               <Nav.Link onClick={() => signIn()}>Log in</Nav.Link>
             </Nav>
           </Navbar.Collapse>
